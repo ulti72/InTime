@@ -4,6 +4,8 @@ import android.content.SharedPreferences;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 
@@ -16,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView mTextViewCountDown;
     private TextView mUsedTime;
+    private Button mButtonStartPause;
+    private Button mButtonReset;
 
     private CountDownTimer mCountDownTimer;
 
@@ -31,10 +35,18 @@ public class MainActivity extends AppCompatActivity {
         mTextViewCountDown = (TextView)findViewById(R.id.text_view_countdown);
         mUsedTime = (TextView)findViewById(R.id.used_time);
 
+        if (mTimerRunning) {
+            pauseTimer();
+        } else {
+            resetTimer();        }
 
-       resetTimer();
 
     }
+    private void pauseTimer() {
+        mCountDownTimer.cancel();
+        mTimerRunning = false;
+    }
+
 
     private void start_point(){
         Calendar c = Calendar.getInstance();
@@ -66,12 +78,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     private void resetTimer() {
         start_point();
         mTimeLeftInMillis = START_TIME_IN_MILLIS-start;
         startTimer();
-
+        updateCountDownText();
     }
 
     private void updateCountDownText() {
@@ -104,6 +115,7 @@ public class MainActivity extends AppCompatActivity {
         if (mCountDownTimer != null) {
             mCountDownTimer.cancel();
         }
+        startTimer();
     }
 
     @Override
