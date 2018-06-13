@@ -4,6 +4,7 @@ import android.content.SharedPreferences;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -17,9 +18,6 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView mTextViewCountDown;
     private TextView mUsedTime;
-    private Button mButtonStartPause;
-    private Button mButtonReset;
-
     private CountDownTimer mCountDownTimer;
 
     private boolean mTimerRunning;
@@ -36,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
 
 
             resetTimer();
+
+
 
 
     }
