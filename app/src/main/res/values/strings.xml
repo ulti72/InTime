@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">InTime</string>
     <string name="appwidget_text">EXAMPLE</string>
+    <string name="about">Spend Your Time Wisely and Keep track of it because, Time is free, but it is priceless. You can not own it, but you can use it.
+You can\'t keep it, but you can spend it.And once it is lost, you can never get it back. The thing is, we all have this account available to us . We all have 86,400 seconds to spend every day, and at the end of the day, they’re gone.</string>
     <string name="add_widget">Add widget</string>
 </resources>
